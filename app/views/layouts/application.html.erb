@@ -5,10 +5,50 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
+<div id="apDiv1">
+  <ul id="MenuBar1" class="MenuBarHorizontal">
+    <li> <a class="MenuBarItemSubmenu MenuBarItemSubmenu" href="#">Home</a>
+      <ul>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </li>
+    <li><a href="#" class="MenuBarItemSubmenu">Protect an Idea</a>
+      <ul>
+        <li><a href="#">Patent Advice</a></li>
+        <li><a href="#">TradeMarking</a></li>
+      </ul>
+    </li>
+    <li><a class="MenuBarItemSubmenu" href="#">Idea Development</a>
+      <ul>
+        <li><a href="#">Prototyping Process</a>        </li>
+        <li><a href="#">Design Process</a></li>
+      </ul>
+    </li>
+    <li><a href="#" class="MenuBarItemSubmenu">Sell an Idea</a>
+      <ul>
+        <li><a href="#">Route to Market</a></li>
+        <li><a href="#">Licensing an Idea</a></li>
+        <li><a href="#">Business Startups</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<div id="apDiv2">WHAT'S THE BIG IDEA</div>
+<p>&nbsp; </p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<script type="text/javascript">
+    var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:'../images/SpryMenuBarDownHover.gif',
+        imgRight:'./images/SpryMenuBarRightHover.gif'});
+</script>
+
 
 <%= yield %>
+<h1> </h1>
 
 </body>
 </html>

@@ -11,3 +11,30 @@
  *= require_self
  *= require_tree .
  */
+
+.initial{
+    postion:relative;
+    margin-top: 10em;
+}
+/* spry div */
+#apDiv1 {
+    position:absolute;
+    width:1400px;
+    height:40px;
+    z-index:1;
+    left: 3px;
+    top: 73px;
+    background-color: #FFF;
+}
+/* header div */
+#apDiv2 {
+    position:absolute;
+    width:761px;
+    height:36px;
+     padding-top:10px;
+    left: 166px;
+
+    text-align: center;
+    font-size: 36px;
+    background-color: #C03;
+}
