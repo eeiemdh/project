@@ -36,8 +36,15 @@
         <li><a href="#">Business Startups</a></li>
       </ul>
     <li><a href="#" class="MenuBarItemSubmenu">User</a>
-      <ul>
+      <ul>  <%if !signed_in? %>
+            <li><%=  link_to "Register", signup_path %></li>
+
         <li><%= link_to "Sign in", signin_path %></li>
+        <%end%>
+        <%if signed_in? %>
+        <%= link_to "Profile", edit_user_path(current_user) %>
+        <%= link_to "Sign out", signout_path, method: "delete" %>
+        <%end%>
         <li><a href="#">TradeMarking</a></li>
       </ul>
     </li>

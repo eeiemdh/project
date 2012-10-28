@@ -1,7 +1,34 @@
 <p id="notice"><%= notice %></p>
 
  <% provide(:title, @user.FirstName) %>
-<h1> <%=  @user.FirstName%></h1>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+|
+<h1 id="change_color">All Users</h1>
+<div class="row">
+  <div class="span6 offset3">
+    <table id="contractors">
+      <tr>
+        <th>ID</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Email</th>
+
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+
+          <tr>
+            <td><%= @user.id %></td>
+            <td><%= @user.FirstName %></td>
+            <td><%= @user.LastName %></td>
+            <td><%= @user.email %></td>
+
+            <td><%= link_to 'Edit', edit_user_path(@user)%></td>
+            <td><%= link_to 'Destroy', @user, confirm: 'Are you sure?', method: :delete %></td>
+          </tr>
+
+    </table>
+  </div>
+</div>
