@@ -39,7 +39,7 @@ gem 'annotate', '2.5.0', group: :development
 # gem 'capistrano'
 
 # To use debugger
-# gem 'debugger'
+ gem 'debugger'
 
 gem 'will_paginate', '~> 3.0'
 
