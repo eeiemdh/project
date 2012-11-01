@@ -12,6 +12,12 @@
  *= require_tree .
  */
 
+body{
+    background:url('../images/rails.png') ;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    padding-top:0px;
+}
 .initial{
     postion:relative;
     margin-top: 10em;

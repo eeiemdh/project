@@ -38,12 +38,14 @@
     <li><a href="#" class="MenuBarItemSubmenu">User</a>
       <ul>  <%if !signed_in? %>
             <li><%=  link_to "Register", signup_path %></li>
-
-        <li><%= link_to "Sign in", signin_path %></li>
+            <li><%= link_to "Sign in", signin_path %></li>
+            <li><%= link_to "All Products", all_path %></li>
         <%end%>
         <%if signed_in? %>
-        <%= link_to "Profile", edit_user_path(current_user) %>
-        <%= link_to "Sign out", signout_path, method: "delete" %>
+            <li><%= link_to "All User Products", show_all_path %></li>
+         <li><%= link_to "All Products", all_path %></li>
+       <li> <%= link_to "Profile", edit_user_path(current_user) %> </li>
+        <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
         <%end%>
         <li><a href="#">TradeMarking</a></li>
       </ul>
@@ -51,12 +53,15 @@
   </ul>
 </div>
 <div id="apDiv2">WHAT'S THE BIG IDEA</div>
+<p id ="test">
+
+</p>
 <p>&nbsp; </p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <script type="text/javascript">
-    var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:'../images/SpryMenuBarDownHover.gif',
-        imgRight:'./images/SpryMenuBarRightHover.gif'});
+    var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:'..../images/SpryMenuBarDownHover.gif',
+        imgRight:'app/assets/images/SpryMenuBarRightHover.gif'});
 </script>
 
 

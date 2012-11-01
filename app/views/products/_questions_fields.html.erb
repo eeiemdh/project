@@ -2,10 +2,18 @@
 
 
   <%= f.label :content, "Question" %><br />
-  <%= f.text_area :content%><br />
-  <%= f.check_box :_destroy %>
+
+  <%= f.text_area  :content, :cols=>50, :rows=>2 %><br />
+
+     <%= f.check_box :_destroy %>
   <%= f.label :_destroy, "Remove Question" %>
 </p>
 <%= f.fields_for :answers do |builder| %>
+    <% if current_user.id == @product.user_id %>
     <%= render 'answer_fields', :f => builder %>
+      <%else%>
+        <%=  render 'read_answers', :f => builder %>
+    <%end%>
+
 <% end %>
+

@@ -9,7 +9,8 @@ Project::Application.routes.draw do
   match '/show',    to: 'users#show'
   match '/index',    to: 'users#index'
   match '/signout', to: 'sessions#destroy', via: :delete
-  match '/index2',  to: 'products#index'
+  match '/all',  to: 'products#index'
+  match '/show_all',  to: 'products#show_user_products'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

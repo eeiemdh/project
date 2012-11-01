@@ -22,6 +22,15 @@ class ProductsController < ApplicationController
     end
   end
 
+  def show_user_products
+    @products = Product.all
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @product }
+    end
+  end
+
   # GET /products/new
   # GET /products/new.json
   def new
