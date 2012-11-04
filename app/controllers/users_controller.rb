@@ -49,7 +49,7 @@ class UsersController < ApplicationController
         sign_in @user
         flash[:success] = "Welcome to the Sample App!"
       #  redirect_to @user
-        redirect_to root_path
+        format.html { render  'users/home' }
 
       else
         format.html { render action: "new" }

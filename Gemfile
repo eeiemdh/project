@@ -44,9 +44,9 @@ gem 'annotate', '2.5.0', group: :development
 gem 'will_paginate', '~> 3.0'
 
 group :production do
-  gem 'sqlite3'
+
 end
 group :development, :test do
-  gem 'sqlite3'
+
   gem 'factory_girl_rails', '4.1.0'
 end
