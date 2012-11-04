@@ -38,6 +38,8 @@ gem 'annotate', '2.5.0', group: :development
 # Deploy with Capistrano
 # gem 'capistrano'
 
+gem 'jw_player_helper'
+
 # To use debugger
  gem 'debugger'
 
