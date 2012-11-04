@@ -1,10 +1,9 @@
-<h1>Editing product</h1>
+<div id="intial"></div>
 
- <div class="initial">
+
    <%= image_tag @product.video_url.to_s %>
- </div>
-<div class="initial">
 
+ <h1> Editing Products</h1>
    <%= form_for @product  do |f| %>
        <% if @product.errors.any? %>
            <div id="error_explanation">
@@ -15,7 +14,7 @@
                    <li><%= msg %></li>
                <% end %>
              </ul>
-           </div>
+
            <%end %>
 
       <div class="field">
@@ -28,23 +27,17 @@
               <%= render "questions_fields", :f => builder %>
           <% end %>
 
+      <%= f.fields_for :comments do |builder| %>
+          <%= render "comments_fields", :f => builder %> <br/>
+      <% end %>
 
 
 
-
-
-
-
-
-
-
-
-       </div>
        <div class="actions">
          <%= f.submit %>
        </div>
    <% end %>
- </div>
 
+</div>
 <%= link_to 'Show', @product %> |
 <%= link_to 'Back', products_path %>

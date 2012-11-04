@@ -1,22 +1,46 @@
 <table>
   <tr>
-    <th>Product url</th>
-    <th>User</th>
+    <th></th>
+    <th></th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
 
   <% @products.each do |product| %>
-      <% if product.user_id == current_user.id %>
+
       <tr>
         <td> <%= image_tag product.video_url.to_s %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, confirm: 'Are you sure?', method: :delete %></td>
+        <% @questions.each do |question| %>
+        <% if question.product_id == product.id %>
+         <tr> <td><%=  "Question:" %> <%=question.content  %></td>
+         </tr>
+
+           <% @answers.each do |answer| %>
+           <% if answer.question_id == question.id %>
+           <tr> <td><%=  "Answer:" %> <%=answer.content  %></td>
+            </tr>
+
+          <% end %>
+           <% end %>
+         <% end %>
+
+
+<% end %>
+      <% @comments.each do |comment| %>
+          <% if comment.product_id == product.id %>
+              <tr> <td><%=  "Comment:" %> <%=comment.content  %></td>
+              </tr>
+          <%end %>
+          <% end %>
+      <tr>
+        <td><%= link_to 'Show', product %>
+            <%= link_to 'Edit', edit_product_path(product) %>
+            <%= link_to 'Destroy', product, confirm: 'Are you sure?', method: :delete %>
+        </td>
       </tr>
       <% end %>
-  <% end %>
+
 </table>
 
 <br />

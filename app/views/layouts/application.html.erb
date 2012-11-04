@@ -8,6 +8,7 @@
 
 </head>
 <body>
+<div id="center">
 <div id="apDiv1">
   <ul id="MenuBar1" class="MenuBarHorizontal">
     <li> <a class="MenuBarItemSubmenu MenuBarItemSubmenu" href="#">Home</a>
@@ -60,13 +61,13 @@
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <script type="text/javascript">
-    var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:'..../images/SpryMenuBarDownHover.gif',
-        imgRight:'app/assets/images/SpryMenuBarRightHover.gif'});
+    var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:'../images/SpryMenuBarDownHover.gif',
+        imgRight:'../images/SpryMenuBarRightHover.gif'});
 </script>
 
 
 <%= yield %>
-<h1> </h1>
+</div>
 
 </body>
 </html>

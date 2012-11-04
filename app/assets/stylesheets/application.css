@@ -13,14 +13,16 @@
  */
 
 body{
-    background:url('../images/rails.png') ;
+   background-image:url('../images/silkBackground.jpg');
     background-size: 100%;
-    background-repeat: no-repeat;
+   /* background-repeat: no-repeat; */
     padding-top:0px;
+    background-color:#C03;
+
 }
 .initial{
     postion:relative;
-    margin-top: 10em;
+    margin-top: 15em;
 }
 /* spry div */
 #apDiv1 {

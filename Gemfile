@@ -7,7 +7,7 @@ gem 'bcrypt-ruby', '3.0.1'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+gem 'pg'
 
 gem "carrierwave"
 
@@ -44,7 +44,7 @@ gem 'annotate', '2.5.0', group: :development
 gem 'will_paginate', '~> 3.0'
 
 group :production do
-  gem 'pg'
+  gem 'sqlite3'
 end
 group :development, :test do
   gem 'sqlite3'

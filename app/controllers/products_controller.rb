@@ -23,8 +23,10 @@ class ProductsController < ApplicationController
   end
 
   def show_user_products
-    @products = Product.all
-
+    @products =  Product.find(:all, :conditions => {:user_id =>current_user.id})
+    @questions = Question.find(:all)
+    @answers = Answer.find(:all)
+    @comments= Comment.find(:all)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @product }
@@ -50,6 +52,8 @@ class ProductsController < ApplicationController
       question = @product.questions.build
       1.times { question.answers.build }
     end
+    comment= @product.comments.build
+
   end
 
   # POST /products
