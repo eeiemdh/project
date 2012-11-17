@@ -8,9 +8,8 @@
   </tr>
 
   <% @products.each do |product| %>
-
-      <tr>
-        <td> <%= image_tag product.video_url.to_s %></td>
+       <tr>
+        <td> <%= product.product_url %></td>
         <% @questions.each do |question| %>
         <% if question.product_id == product.id %>
          <tr> <td><%=  "Question:" %> <%=question.content  %></td>

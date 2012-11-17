@@ -10,12 +10,17 @@
 </head>
 <body>
 <div id="center">
-<div id="apDiv1">
+
+<div id="Eureka">
+  <%= image_tag "WHATStheBIGidea.gif" %>
+</div>
+  <div id="base">
   <ul id="MenuBar1" class="MenuBarHorizontal">
     <li> <a class="MenuBarItemSubmenu MenuBarItemSubmenu" href="#">Home</a>
       <ul>
         <li><a href="#">Contact Us</a></li>
         <li><a href="#">FAQ</a></li>
+        <li><%= link_to "Home", all_path %></li>
       </ul>
     </li>
     <li><a href="#" class="MenuBarItemSubmenu">Protect an Idea</a>
@@ -25,7 +30,7 @@
       </ul>
 
     </li>
-    <li><a class="MenuBarItemSubmenu" href="#">Idea Development</a>
+    <li><a href="#" class="MenuBarItemSubmenu" >Idea Expansion</a>
       <ul>
         <li><a href="#">Prototyping Process</a>        </li>
         <li><a href="#">Design Process</a></li>
@@ -53,8 +58,9 @@
       </ul>
     </li>
   </ul>
-</div>
-<div id="apDiv2">WHAT'S THE BIG IDEA</div>
+
+
+
 <p id ="test">
 
 </p>
@@ -66,10 +72,10 @@
         imgRight:'../images/SpryMenuBarRightHover.gif'});
 </script>
 
-<div class="initial">
 <%= yield %>
-  </div>
 
+
+</div>
 </div>
 
 </body>

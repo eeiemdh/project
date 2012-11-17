@@ -13,12 +13,15 @@
 /* The outermost container of the Menu Bar, an auto width box with no margin or padding */
 ul.MenuBarHorizontal
 {
-	margin: 0;
+	margin-left:7.0%;
 	padding: 0;
 	list-style-type: none;
 	font-size: 100%;
 	cursor: default;
 	width: inherit;
+    margin-top:-2.3em;
+    border:none;
+
 }
 /* Set the active Menu Bar with this class, currently setting z-index to accomodate IE rendering bug: http://therealcrisp.xs4all.nl/meuk/IE-zindexbug.html */
 ul.MenuBarActive
@@ -154,7 +157,7 @@ ul.MenuBarHorizontal iframe
 {
 	position: absolute;
 	z-index: 1010;
-
+	filter:alpha(opacity:0.1);
 }
 /* HACK FOR IE: to stabilize appearance of menu items; the slash in float is to keep IE 5.0 from parsing */
 @media screen, projection

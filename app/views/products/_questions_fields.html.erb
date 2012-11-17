@@ -3,17 +3,18 @@
 
   <%= f.label :content, "Question" %><br />
 
-  <%= f.text_area  :content, :cols=>50, :rows=>2, :read_only=>true %><br />
+  <%= f.text_area  :content, :cols=>50, :rows=>2, :read_only=>true %>
 
      <%= f.check_box :_destroy %>
-  <%= f.label :_destroy, "Remove Question" %>
+  <%= f.label :_destroy, "Remove" %> </br>
+  <%=  link_to_add_fields "Add Answer", f, :answers %> </br>
 </p>
 <%= f.fields_for :answers do |builder| %>
-    <% if current_user.id == @product.user_id %>
-    <%= render 'answer_fields', :f => builder %>
-      <%else%>
-        <%=  render 'read_answers', :f => builder %>
-    <%end%>
 
-<% end %>
+    <%= render 'answer_fields', :f => builder %>
+
+   <%end%>
+
+
+
 

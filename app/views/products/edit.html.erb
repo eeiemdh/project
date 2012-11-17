@@ -1,11 +1,11 @@
-<div class="intial"></div>
 
-
-
-   <%= video_player({:file=>@product.video.url.to_s}) %>
-
- <h1> Editing Products</h1>
+<div id="edit_div">
+<h1> Editing Products</h1>
+  <div id="video_place">
+  <%= video_player({:file=>@product.video.url.to_s}) %>
+  </div>
    <%= form_for @product  do |f| %>
+
        <% if @product.errors.any? %>
            <div id="error_explanation">
              <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
@@ -19,7 +19,7 @@
            <%end %>
 
       <div class="field">
-        <%= f.label :product_url  %><br />
+        <%= f.label :Product_Title  %><br />
         <%= f.text_field :product_url %>
          </div>
 
@@ -27,10 +27,11 @@
           <%= f.fields_for :questions do |builder| %>
               <%= render "questions_fields", :f => builder %>
           <% end %>
-
-      <%= f.fields_for :comments do |builder| %>
+     <br/> <%=  link_to_add_fields "Add Question", f, :questions %> </br>
+         <%= f.fields_for :comments do |builder| %>
           <%= render "comments_fields", :f => builder %> <br/>
       <% end %>
+
 
 
 
@@ -40,5 +41,6 @@
    <% end %>
 
 </div>
-<%= link_to 'Show', @product %> |
+
 <%= link_to 'Back', products_path %>
+</div>

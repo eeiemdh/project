@@ -48,11 +48,13 @@ class ProductsController < ApplicationController
   # GET /products/1/edit
   def edit
     @product = Product.find(params[:id])
-    1.times do
-      question = @product.questions.build
-      1.times { question.answers.build }
-    end
-    comment= @product.comments.build
+#   begin
+#   1.times do
+ #    question = @product.questions.build
+  #   1.times { question.answers.build }
+ #  end
+ #  comment= @product.comments.build
+ #  end
 
   end
 
