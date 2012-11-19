@@ -1,3 +1,4 @@
+<div id ="show_user_div1">
 <table>
   <tr>
     <th></th>
@@ -8,17 +9,19 @@
   </tr>
 
   <% @products.each do |product| %>
-       <tr>
-        <td> <%= product.product_url %></td>
+       <tr rows="2" >
+       <td id="url"> <%= product.product_url %></td>
         <% @questions.each do |question| %>
         <% if question.product_id == product.id %>
-         <tr> <td><%=  "Question:" %> <%=question.content  %></td>
+         <tr> <td id="question"><%=  "Question:" %> <%=question.content%></td>
          </tr>
 
            <% @answers.each do |answer| %>
            <% if answer.question_id == question.id %>
-           <tr> <td><%=  "Answer:" %> <%=answer.content  %></td>
-            </tr>
+             <tr>
+             <td id="answer"><%=  "Answer:" %>
+             <%=answer.content  %></td>
+             </tr>
 
           <% end %>
            <% end %>
@@ -28,7 +31,8 @@
 <% end %>
       <% @comments.each do |comment| %>
           <% if comment.product_id == product.id %>
-              <tr> <td><%=  "Comment:" %> <%=comment.content  %></td>
+              <tr>
+                <td id="comment"><%=  "Comment:" %> <%=comment.content%></td>
               </tr>
           <%end %>
           <% end %>
@@ -44,4 +48,4 @@
 
 <br />
 
-<%= link_to 'New Product', new_product_path %>
+</div>

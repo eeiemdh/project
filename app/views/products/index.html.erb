@@ -1,9 +1,10 @@
-<h1>Listing products</h1>
 
+
+ <div id="index_div">
 <table>
   <tr>
-    <th>Product url</th>
-    <th>User</th>
+    <th colspan="2">Latest Videos</th>
+    <th></th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,13 +14,36 @@
 <% @products.each do |product| %>
   <tr>
     <td><%=product.product_url%></td>
-    <td><%= link_to 'Show', product %></td>
-    <td><%= link_to 'Show Me', edit_product_path(product) %></td>
-    <td><%= link_to 'Destroy', product, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'View Video', edit_product_path(product) %></td>
+
+
   </tr>
 <% end %>
 </table>
 
-<br />
+<div id="index_newProduct">
+   <%= link_to 'Upload Video', new_product_path %> <br/>
+</div>
+</div>
+<div id="index_text">
+<h2> Dedicated to Innovation</h2>
+  <p>
+    This site is dedicated to entrepreneurs wishing to promote innovative ideas and gauge
+    market reaction through video presentation.
+  </p>
+  <p>
+    This is an interactive website where members will comment on your product and may seek
+    clarification, through questions, of product properties.
+  </p>
+  <p>
+    Please view the videos by clicking the link in the "Latest Videos" table adjacent.
+   </p>
+  <p>
+<div id="index_lightbulb">
+    <%= image_tag "lightbulb.jpg" %>
+  </div>
+</div>
 
-<%= link_to 'New Product', new_product_path %>
+
+
+

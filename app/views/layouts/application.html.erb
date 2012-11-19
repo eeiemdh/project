@@ -3,18 +3,20 @@
 <head>
   <title>Project</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+
+
   <%= javascript_include_tag "application" %>
   <%= javascript_include_tag "swfobject" %>
   <%= csrf_meta_tags %>
 
-</head>
-<body>
-<div id="center">
-
+  </head>
+  <body>
+  <div id="container">
+    <div id="center">
 <div id="Eureka">
   <%= image_tag "WHATStheBIGidea.gif" %>
 </div>
-  <div id="base">
+  <div class="base">
   <ul id="MenuBar1" class="MenuBarHorizontal">
     <li> <a class="MenuBarItemSubmenu MenuBarItemSubmenu" href="#">Home</a>
       <ul>
@@ -75,8 +77,8 @@
 <%= yield %>
 
 
-</div>
-</div>
-
+</div> <!-- end div base  -->
+</div>  <!-- end div center  -->
+</div> <!-- end div container -->
 </body>
 </html>

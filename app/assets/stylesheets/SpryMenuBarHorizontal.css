@@ -13,13 +13,14 @@
 /* The outermost container of the Menu Bar, an auto width box with no margin or padding */
 ul.MenuBarHorizontal
 {
-	margin-left:7.0%;
+	margin-left:4.25%;
 	padding: 0;
 	list-style-type: none;
 	font-size: 100%;
 	cursor: default;
-	width: inherit;
-    margin-top:-2.3em;
+    width:100%;
+/*	width: inherit;  */
+    margin-top:-2.0em;
     border:none;
 
 }

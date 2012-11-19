@@ -14,18 +14,20 @@
 
 
     <div class="field">
-      <%= f.label :product_Title  %><br />
-      <%= f.text_field :product_url %>
+      <%= f.label :Product_Name %><br />
+      <%= f.text_field :product_url, :size=>34 %> <br/>
 
-     <%=  f.file_field :video %>
-
-
+     <%=  f.file_field :video %> <br/>
 
 
 
 
-    </div>
+
+
+
   <div class="actions">
+    <br/>
     <%= f.submit %>
+    </div>
   </div>
 <% end %>
