@@ -158,7 +158,7 @@ ul.MenuBarHorizontal iframe
 {
 	position: absolute;
 	z-index: 1010;
-	filter:alpha(opacity:0.1);
+/*	filter:alpha(opacity:0.1); */
 }
 /* HACK FOR IE: to stabilize appearance of menu items; the slash in float is to keep IE 5.0 from parsing */
 @media screen, projection
