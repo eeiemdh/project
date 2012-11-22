@@ -19,14 +19,23 @@
 
   </tr>
 <% end %>
+ <tfoot>
+    <tr>
+      <td colspan="2">
+        <% if(signed_in?) %>
+            <div id="index_newProduct">
+              <%= link_to 'Upload Video', new_product_path %> <br/>
+            </div>
+        <% end %>
+      </td>
+    </tr>
+ </tfoot>
 </table>
 
-<div id="index_newProduct">
-   <%= link_to 'Upload Video', new_product_path %> <br/>
-</div>
 </div>
 
 <div id="index_text">
+  <br />
 <h2> Dedicated to Innovation</h2>
   <p>
     This site is dedicated to entrepreneurs wishing to promote innovative ideas and gauge

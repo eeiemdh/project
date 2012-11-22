@@ -1,4 +1,6 @@
 Project::Application.routes.draw do
+  resources :statics
+
   resources :products
 
   resources :users
@@ -11,6 +13,15 @@ Project::Application.routes.draw do
   match '/signout', to: 'sessions#destroy', via: :delete
   match '/all',  to: 'products#index'
   match '/show_all',  to: 'products#show_user_products'
+  match '/contact', to:'statics#contact'
+  match '/faq' , to: 'statics#faq'
+  match '/market', to:'statics#market'
+  match '/licence', to:'statics#licence'
+  match '/business', to:'statics#business'
+  match '/prototype', to: 'statics#prototype'
+  match '/design', to:'statics#design'
+  match '/patent', to: 'statics#patent'
+  match '/trade', to: 'statics#trade'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

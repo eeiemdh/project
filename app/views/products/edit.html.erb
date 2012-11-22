@@ -4,6 +4,7 @@
   <div id="video_place">
   <%= video_player({:file=>@product.video.url.to_s}) %>
   </div>
+  <% if signed_in? %>
    <%= form_for @product  do |f| %>
 
        <% if @product.errors.any? %>
@@ -41,6 +42,6 @@
    <% end %>
 
 </div>
-
+<% end  %>  <!-- end if -->
 <%= link_to 'Back', products_path %>
 </div>

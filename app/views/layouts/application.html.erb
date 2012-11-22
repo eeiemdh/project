@@ -19,46 +19,47 @@
 </div>
   <div class="base">
   <ul id="MenuBar1" class="MenuBarHorizontal">
-    <li> <a class="MenuBarItemSubmenu MenuBarItemSubmenu" href="#">Home</a>
+    <li> <a class="MenuBarItemSubmenu MenuBarItemSubmenu" href="#">Members</a>
       <ul>
-        <li><a href="#">Contact Us</a></li>
-        <li><a href="#">FAQ</a></li>
+          <%if !signed_in? %>
+              <li><%=  link_to "Register", signup_path %></li>
+              <li><%= link_to "Sign in", signin_path %></li>
+              <li><%= link_to "All Products", all_path %></li>
+          <%end%>
+          <%if signed_in? %>
+              <li><%= link_to "Your Products Report", show_all_path %></li>
+              <li> <%= link_to "Profile", edit_user_path(current_user) %> </li>
+              <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
+          <%end%>
+
         <li><%= link_to "Home", all_path %></li>
       </ul>
     </li>
     <li><a href="#" class="MenuBarItemSubmenu">Protect an Idea</a>
       <ul>
-        <li><a href="#">Patent Advice</a></li>
-        <li><a href="#">TradeMarking</a></li>
+        <li><%= link_to "Patent Your Idea", patent_path %></li>
+        <li><%= link_to "TradeMarking", trade_path %></li>
       </ul>
 
     </li>
     <li><a href="#" class="MenuBarItemSubmenu" >Idea Expansion</a>
       <ul>
-        <li><a href="#">Prototyping Process</a>        </li>
-        <li><a href="#">Design Process</a></li>
+        <li><%= link_to "Prototyping Process", prototype_path %></li>
+        <li><%= link_to "Design Process", design_path %></li>
       </ul>
     </li>
     <li><a href="#" class="MenuBarItemSubmenu">Sell an Idea</a>
       <ul>
-        <li><a href="#">Route to Market</a></li>
-        <li><a href="#">Licensing an Idea</a></li>
-        <li><a href="#">Business Startups</a></li>
+        <li><%= link_to "Route to Market", market_path %></li>
+        <li><%= link_to "Licensing an Idea", licence_path %></li>
+        <li><%= link_to "Business Startups", business_path %></li>
+
       </ul>
-    <li><a href="#" class="MenuBarItemSubmenu">User</a>
-      <ul>  <%if !signed_in? %>
-            <li><%=  link_to "Register", signup_path %></li>
-            <li><%= link_to "Sign in", signin_path %></li>
-            <li><%= link_to "All Products", all_path %></li>
-        <%end%>
-        <%if signed_in? %>
-            <li><%= link_to "All User Products", show_all_path %></li>
-         <li><%= link_to "All Products", all_path %></li>
-       <li> <%= link_to "Profile", edit_user_path(current_user) %> </li>
-        <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
-        <%end%>
-        <li><a href="#">TradeMarking</a></li>
-      </ul>
+    <li><a href="#" class="MenuBarItemSubmenu">About Us</a>
+      <ul>
+        <li><%= link_to "Contact Us", contact_path %></li>
+        <li><%= link_to "FAQ", faq_path %></li>
+     </ul>
     </li>
   </ul>
 
