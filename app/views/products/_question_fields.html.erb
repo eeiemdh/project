@@ -1,17 +1,14 @@
-<p>
 
 
-  <%= f.label :content, "Question" %><br />
 
-  <%= f.text_area  :content, :cols=>50, :rows=>2, :read_only=>true %>
 
-  <%= f.check_box :_destroy %>
-  <%= f.label :_destroy, "Remove" %>
-</p>
+
+  <%= f.text_area  :content, :cols=>35, :rows=>4, :value=>"Enter question here"%>
+
 <%= f.fields_for :answers do |builder| %>
   <%= render 'answer_fields', :f => builder %>
  <% end %>
-
+     <br />
     <%=  link_to_add_fields "Add Answer", f, :answers %>
 
 

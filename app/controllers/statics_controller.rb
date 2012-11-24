@@ -20,10 +20,6 @@ class StaticsController < ApplicationController
 
   end
 
-  def business
-
-  end
-
   def prototype
 
   end

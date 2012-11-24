@@ -1,47 +1,89 @@
+<div id="edit_div" xmlns="http://www.w3.org/1999/html">
+  <% if !signed_in? %>
+      <div id="edit_unsigned" >
+        <%=  link_to "Register", signup_path , :style=>"color:blue"%> <br /> <br />
+        <%= link_to "Sign in", signin_path, :style=>"color:blue" %>
+        </ul>
+      </div>
+  <% end %>
+  <div class="field">
 
-<div id="edit_div">
 
-  <div id="video_place">
-  <%= video_player({:file=>@product.video.url.to_s}) %>
+    <input type="text" value= <%=@product.product_url%> , class="video_title"/>
   </div>
   <% if signed_in? %>
-   <%= form_for @product  do |f| %>
+      <p id="stats" >
 
-       <% if @product.errors.any? %>
-           <div id="error_explanation">
-             <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
-
-             <ul>
-               <% @product.errors.full_messages.each do |msg| %>
-                   <li><%= msg %></li>
-               <% end %>
-             </ul>
-
-           <%end %>
-
-      <div class="field">
-        <%= f.label :Product_Title  %><br />
-        <%= f.text_field :product_url%>
-         </div>
+        View <%=@product.product_url %> <br /> <br />
+        <%if @comment.count == 1 %>
+            <%= @comment.count %> <a href="#comments">Comment </a> </br>
+        <% else %>
+            <%= @comment.count %> <a href="#comments">Comments </a> </br>
+        <% end %>
+        <%if @question.count == 1 %>
+            <%= @question.count %> <a href="#comments">Question </a> </br>
+        <% else %>
+            <%= @question.count %> <a href="#comments">Questions </a> </br>
+        <% end %>
 
 
-          <%= f.fields_for :questions do |builder| %>
-              <%= render "questions_fields", :f => builder %>
-          <% end %>
-     <br/> <%=  link_to_add_fields "Add Question", f, :questions %> </br>
-         <%= f.fields_for :comments do |builder| %>
-          <%= render "comments_fields", :f => builder %> <br/>
+
+
+
+
+
+  <% end %>
+  </p>
+  <div id="video_place">
+    <%= video_player({:file=>@product.video.url.to_s}, width:500, height:400) %>
+  </div>
+  <% if signed_in? %>
+      <%= form_for @product  do |f| %>
+
+          <% if @product.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+                <ul>
+                  <% @product.errors.full_messages.each do |msg| %>
+                      <li><%= msg %></li>
+                  <% end %>
+
+                </ul>
+              </div>
+
+          <%end %>
+
+
+          <div class="actions1">
+            <a id="comments"></a>
+            <%= f.submit %>
+          </div>
+
+          <div id="questions_div">
+            <br /> <%=  link_to_add_fields "Add Question", f, :questions %> </br>
+            <%= f.fields_for :questions do |builder| %>
+
+                <%= render "questions_fields", :f => builder %>
+
+            <% end %>
+          </div>
+          <div id="comments_div">
+
+            </br> <%=  link_to_add_fields "Add Comment", f, :comments %> </br>
+            <%= f.fields_for :comments do |builder| %>
+                <div id="comments_column">
+                  <%= render "comments_fields", :f => builder %>
+                </div>
+            <% end %>
+
       <% end %>
 
+      <div id="footer">
+      </div>
 
+  <% end  %>  <!-- end if -->
 
+  </div>
 
-       <div class="actions">
-         <%= f.submit %>
-       </div>
-   <% end %>
-
-</div>
-<% end  %>  <!-- end if -->
-<%= link_to 'Back', products_path %>
 </div>

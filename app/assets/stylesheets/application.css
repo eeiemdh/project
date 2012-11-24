@@ -13,188 +13,259 @@
  */
 html, body{height:100%;}
 body{
+      height:100%;
+      width:100%;
+    background-image:url('../images/background5.jpg');
+  }
 
-  background-image:url('../images/silkBackground.jpg');
-   background-size: 100%;
-    padding-top:0px;
-}
-
-#container{position:relative;
+#container{position:absolute;
            width:100%;
            height:100%;}
 
-#center { position:relative;
-    margin-left:16%;
-    margin-right:10em;
-    margin-top:1em;
-    margin-bottom:1em;
 
-   /* width:60em;   */
-    background-color:#7E8081;
-    border-radius:30px;
 
+table {font-weight:bold;
+    color:black;
+    font-size:16px;
+    right:150px;
+    background-color:#FFF;
 
 }
-table {font-weight:bold;
-       color:#6B0103;
-       font-size:16px;
-       left:150px;
-       background-color:#FFF;
-    /*   background-image:url('../images/bath.jpg'); */
+
+td {
+    border:.1em;
+    border-style: solid;
 }
 textarea {
-           font-size:18px;}
+    font-size:18px;}
 
- label {
-        color:#1C140D;
-        font-weight:bold;
-        font-size:16px;
- }
+label {
+    color:#1C140D;
+    font-weight:bold;
+    font-size:16px;
+}
 .initial{
     margin-top: 3em;
 }
 /* spry div */
-#apDiv1 {
-    position:absolute;
-    width:1400px;
-    height:40px;
-    z-index:1;
-    left: 3px;
-    top: 73px;
-    background-color: #FFF;
-}
+
 /* header div */
 #Eureka{
-         margin-top:1em;
-         margin-left:18%;
-         margin-bottom:.5em;
-         border:none;
-         width:100%;
+    margin-top:1em;
+    margin-left:25%;
+    margin-bottom:.5em;
+    border:none;
+    width:100%;
 
 
 }
-.base{ position:relative;
-
+.base{ position:absolute;
+    width:80%;
     margin-top:-1em;
-    margin-left:3.5%;
+    margin-left:10%;
     margin-right:3%;
     margin-bottom:2em;
-    background-color:#6B0103;
+    background-color:white;
     border-radius:20px;
 
 
-
-
 }
+
+#questions_div{position:relative;
+              float: right;
+              margin-bottom:5em;
+              margin-right:5em;
+              text-transform:uppercase;
+              }
+#questions_div a {color:black;}
+#questions_div textarea{background-color:#BF9692;}
+
+#comments_div{ position:relative;
+               margin-top:1em;
+               margin-bottom:2em;
+               margin-left:5em;
+               text-transform:uppercase;}
+#comments_div textarea {background-color:#BF9692;}
+#comments_div a { color:black;}
+
 
 #edit_div{
-
-    margin-left:50px;
+          margin-left:50px;
+         }
+#edit_unsigned{ font-size:1.25em;
+    color:black;
+    text-transform:uppercase;
 }
+
+#stats { position:relative;
+         float:left;
+         margin-left:5em;
+         margin-top:15%;
+         font-size:1.25em;
+         color:white;
+         height:8em;
+         width:8em;
+         border-radius:10px;
+    background-image:url('../images/stats.png');
+         text-align:center;
+}
+
+.quizfield{color:black;}
+
 
 .textfield { color:#B2B2AD;}
 
- #video_place{ margin-left:20%;}
+#video_place{ position:relative;
+              float:right;
+              margin-right:30%;
+              margin-bottom:10em;
+
+             /*margin-left:23.5%;
+              margin-top:5%;*/}
 
 
-.field  {margin-left:26%;
+.field  {margin-left:38%;
+         margin-top:1em;
 
-             }
+}
 
+.video_title{ text-align:center;
+              font-size:1.25em;
+              font-weight:bold;
+}
 
 .field label {font-size:1em;
-              color:GrayText;
+              color:black;
               text-transform:uppercase;
-              margin-left:10%;
+              margin-left:2%;
 }
 
 .field textfield{text-align:center;}
 
+.actions1{ margin-left:40%;
+         margin-top:15%;
+         font-size:1.5em;}
+
 
 #index_div{ position:relative;
-            float:right;
-            margin-right:10em;
-            }
+    float:right;
+    margin-right:10em;
+    background-color:darkgray;
+}
+
+#index_div table tr td {text-transform:uppercase;
+                        color:#413D3D;
+                        font-family:san-serif;
+                        padding-top:2px;
+                        padding-bottom:2px;
+                        background-color:white;
+                        border-color:black;
+                       }
+
+#index_div table th { text-transform:uppercase;
+                      color:#413D3D;
+                      font-family:san-serif;
+                      padding-top:2px;
+                      padding-bottom:2px;
+                      background-color:white;
+
+}
+
+
+
+
 #index_text{
 
-             width:32em;
-             color:white;
-             margin-left:4em;
-             margin-top:1em;
-             background-color:#520000;}
+    width:32em;
+    color:black;
+    margin-left:12%;
+    margin-top:1em;
+    }
 
 #index_newProduct{ float:right;
-                   margin-right:3em;
+    margin-right:3em;
 
-                   }
+}
 #index_text p { font-size:1.1em;}
 #index_text h2{ text-align:center;}
-#index_lightbulb{margin-top:10em;
-                 margin-left:4em;}
+#index_lightbulb{margin-top:0em;
+    margin-left:2.5em;}
 
 /*css for video upload page */
 #new_image{margin-top:5em;
-           margin-left:12em;}
+    margin-left:12em;}
 /*-----------------show all user products---------------------------------------------*/
 #show_user_div1 {
-                 margin-left:12.5em;
-                }
+    margin-left:30%;
+}
 #comment{color:#606048;
-         }
-#question{color:#050505;
-          border-style:dashed;
-         }
-#answer{color:gray;
+    border:none;
+}
+#question{color:black;
+    border:none;
+}
+#answer{color:#601848;
+    border:none;
 
-        }
+}
 #url {color:#6B0103;
-      text-align:center;
-      text-transform:uppercase;
+    text-align:center;
+    text-transform:uppercase;
+    border:none;
+    text-decoration:underline;
 
-      }
+}
+.user_table{border:none;
+    background-color:white;}
 /*-----------------Edit user profile--------------------------------------------*/
 #user_edit label { color:white;
-                   text-transform:uppercase;
-                   font-size:12px;
+    text-transform:uppercase;
+    font-size:12px;
 
-                  }
+}
 #user_edit h1{ margin-left:12em;
-               color:white;
-              text-transform:uppercase;
-              font-size:14px;
+    color:white;
+    text-transform:uppercase;
+    font-size:14px;
 }
 #user_edit { margin-left:8em;}
-#shower { margin-left:10em;}
+#shower { margin-left:20em;}
+
+a:link{color:white;}
+
+a:hover{background-color:#26ADE4;}
+
 
 /*-----------------New Session--------------------------------------------*/
 
 #session_new label { color:white;
 
-                     text-transform:uppercase;
-                     font-size:12px;
+    text-transform:uppercase;
+    font-size:12px;
 
-                   }
+}
 .button{ color:white;
-         text-transform:uppercase;
-         font-size:12px;
-      }
+    text-transform:uppercase;
+    font-size:12px;
+}
 
 #session_new p {color:white;
-                margin-left:35%;}
+    margin-left:35%;}
 
-#session_image{margin-left:20%;
-               margin-top:10%;
-               margin-bottom:10%;
+#session_image{margin-left:25%;
+    margin-top:5%;
+    margin-bottom:10%;
 }
 
 /*----------------------Contact Details --------------------------------*/
 
 #contact_div { margin-top:10%;
-               text-align:center;
-               color:white;}
+    text-align:center;
+    color:white;}
 
 /*-------------------------------------------Static pages ----------------------*/
 #static_image{
-               margin-top:10em;
-               margin-left:25em;
+    margin-top:10em;
+    margin-left:25em;
 }
+

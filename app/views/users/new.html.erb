@@ -2,29 +2,29 @@
 
   <div class="initial">
 
-
-<h1>Sign up</h1>
-
 <div class="row">
   <div class="span6 offset3">
     <%= form_for(@user) do |f| %>
 
-        <%= f.label :FirstName %>
+        <%= f.label :FirstName, :style=>"margin-left:15em"%>
         <%= f.text_field :FirstName %> </br>
-        <%= f.label :LastName %>
+        <%= f.label :LastName, :style=>"margin-left:15.2em" %>
         <%= f.text_field :LastName %>  </br>
 
-        <%= f.label :email %>
+        <%= f.label :email, :style=>"margin-left:17.55em" %>
         <%= f.text_field :email %> </br>
 
-        <%= f.label :password %>
-        <%= f.password_field :password %> </br>
+        <%= f.label :password, :style=>"margin-left:15.2em"%>
+        <%= f.password_field :password, :size=>31 %> </br>
 
-        <%= f.label :password_confirmation, "Confirmation" %>
-        <%= f.password_field :password_confirmation %> </br>
+        <%= f.label :password_confirmation, "Confirmation", :style=>"margin-left:13.375em" %>
+        <%= f.password_field :password_confirmation,  :size=>31 %> </br> <br />
 
-        <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+        <%= f.submit "Create my account", class: "button",:style=>"margin-left:30em"  %>
     <% end %>
   </div>
 </div>
+ <div id="new_image">
+      <%= image_tag("shower.jpg", :size=>"400x300", :style=>"margin-left:8em") %> <br/>
+ </div>
       </div>

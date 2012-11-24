@@ -34,13 +34,10 @@ class ProductsController < ApplicationController
     end
   end
 
-  # GET /products/new
-  # GET /products/new.json
+
   def new
     @product = Product.new
-
-
-    respond_to do |format|
+      respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @product }
     end
@@ -49,15 +46,10 @@ class ProductsController < ApplicationController
   # GET /products/1/edit
   def edit
     @product = Product.find(params[:id])
-#   begin
-#   1.times do
- #    question = @product.questions.build
-  #   1.times { question.answers.build }
- #  end
- #  comment= @product.comments.build
- #  end
-
-  end
+    @comment =  Comment.find(:all, :conditions => {:product_id =>@product.id})
+    @question =  Question.find(:all, :conditions => {:product_id =>@product.id})
+    @answer = Answer.find(:all)
+ end
 
   # POST /products
   # POST /products.json
@@ -68,7 +60,7 @@ class ProductsController < ApplicationController
     respond_to do |format|
       if @product.save
         format.html { redirect_to root_path, notice: 'Product was successfully created.' }
-        format.json { render json: @product, status: :created, location: @product }
+        #    format.json { render json: @product, status: :created, location: @product }
       else
         format.html { render action: "new" }
         format.json { render json: @product.errors, status: :unprocessable_entity }
@@ -81,9 +73,10 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
 
+
     respond_to do |format|
       if @product.update_attributes(params[:product])
-        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
+        format.html { redirect_to edit_product_path(@product), notice: 'Product was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
