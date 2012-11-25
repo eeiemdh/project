@@ -17,6 +17,10 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
 
+    @comment =  Comment.find(:all, :conditions => {:product_id =>@product.id})
+    @questions =  Question.find(:all, :conditions => {:product_id =>@product.id})
+    @answer =  Answer.find(:all)
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @product }

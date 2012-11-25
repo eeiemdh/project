@@ -6,10 +6,14 @@
         </ul>
       </div>
   <% end %>
+
+
   <div class="field">
     <input type="text" value= <%=@product.product_url%> ,  class="video_title">
   </div>
   <% if signed_in? %>
+      <%= link_to "Product Report",display_path(:id=>@product.id), :style=>"color:blue" %>
+
       <p id="stats" >
 
         View  <br /> <br />
@@ -67,6 +71,7 @@
             <% end %>
           </div>
           <div id="comments_div">
+
             <%=  link_to_add_fields "Add Comment", f, :comments%>
             <%= f.fields_for :comments do |builder| %>
                 <div id="comments_column">

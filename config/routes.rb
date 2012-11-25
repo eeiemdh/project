@@ -13,6 +13,7 @@ Project::Application.routes.draw do
   match '/signout', to: 'sessions#destroy', via: :delete
   match '/all',  to: 'products#index'
   match '/show_all',  to: 'products#show_user_products'
+  match '/display', to: 'products#show'
   match '/contact', to:'statics#contact'
   match '/faq' , to: 'statics#faq'
   match '/market', to:'statics#market'

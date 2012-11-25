@@ -140,7 +140,7 @@ label {
               font-size:1.25em;
               font-weight:bold;
               text-transform:uppercase;
-              background-color:gray;
+              background-color:whitesmoke;
 }
 
 .field label {font-size:1em;
@@ -180,11 +180,11 @@ label {
 
 }
 
+#index_div a:link { color:gray;}
 
 
 
 #index_text{
-
     width:32em;
     color:black;
     margin-left:12%;
@@ -225,7 +225,23 @@ label {
 
 }
 .user_table{border:none;
-    background-color:white;}
+    background-color:white;
+}
+
+ #summary{text-transform:uppercase;
+           color:#8a2be2;
+  }
+
+#li_product {text-transform:uppercase;
+             list-style:none;
+             text-decoration:underline;
+             font-weight:bold;}
+
+.li_other  {text-transform:uppercase;
+           list-style:none;
+           }
+
+
 /*-----------------Edit user profile--------------------------------------------*/
 #user_edit label { color:Black;
                    text-transform:uppercase;
@@ -276,4 +292,29 @@ a:hover{background-color:#26ADE4;}
     margin-top:10em;
     margin-left:25em;
 }
+/*----------------------------Show Product Page ---------------------------------*/
+#show_questions{ position:relative;
+                float:left;
+                margin-top:1em;
+                margin-left:43%;
+                }
 
+#show_comments { float:left;
+                margin-left:30%;
+                margin-right:10%;}
+
+#show_summary{ float:left;
+               margin-left:30%;
+               margin-right:15%;
+               margin-top:2%;
+
+}
+#show_customer{
+               float:left;
+               margin-left:30%;
+}
+
+#show_links{ float:left;
+             margin-left:5%;
+             margin-bottom:5%;
+             margin-right:60%;}

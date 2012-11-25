@@ -13,8 +13,8 @@
 
 <% @products.each do |product| %>
   <tr>
-    <td><%=product.product_url%></td>
-    <td><%= link_to 'View Video', edit_product_path(product) %></td>
+    <td ><%=product.product_url%></td>
+    <td id="viewVideo"><%= link_to 'View Video', edit_product_path(product) %></td>
 
 
   </tr>

@@ -1,17 +1,17 @@
 <div id="show_user_div1">
-  <table>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
+
 
     <% @products.each do |product| %>
          <% question_i =0 %>
         <% answers_i =0 %>
         <% comment_i=0 %>
+        <table>
+          <tr>
+            <td class="user_table"> &nbsp</td>
+          </tr>
+          <tr>
+            <td class="user_table"> &nbsp</td>
+          </tr>
         <tr>
           <td id="url" align="center" colspan="2"> <%= product.product_url %></td>
           <% @questions.each do |question| %>
@@ -47,21 +47,23 @@
             <% end %>
         <% end %>
 
-        <tr>
-          <td class="user_table"> &nbsp</td>
-        </tr>
-        <tr>
-          <td class="user_table"> &nbsp</td>
-        </tr>
-        <tr>
-          <td><%= question_i %>  questions</td>
-          <td><%= answers_i %> answers</td>
-          <td><%= comment_i %> comments</td>
-         </tr>
 
-    <% end %>
 
-  </table>
+        </table><br />
+      <h3 id ="summary"> Summary</h3>
+
+      <p id="summary_p">
+        <ul>
+          <li id="li_product"><%= product.product_url %> </li>
+          <li class="li_other">Total Questions: <%= question_i %> </li>
+          <li class="li_other"> Total Answers: <%=  answers_i %>  </li>
+          <li class="li_other"> Total Comments: <%=  comment_i %>  </li>
+         </ul>
+      </p>
+
+<% end %>
+
+
 
   <br/>
 
