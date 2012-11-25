@@ -11,6 +11,7 @@
 
   </head>
   <body>
+
   <div id="container">
 
     <div id="center">
@@ -18,7 +19,7 @@
   <%= image_tag "GreenEureka.gif" %>
 </div>
   <div class="base">
-  <ul id="MenuBar1" class="MenuBarHorizontal">
+      <ul id="MenuBar1" class="MenuBarHorizontal">
     <li> <a class="MenuBarItemSubmenu MenuBarItemSubmenu" href="#">Members</a>
       <ul>
           <%if !signed_in? %>
@@ -75,7 +76,12 @@
     var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:'../images/SpryMenuBarDownHover.gif',
         imgRight:'../images/SpryMenuBarRightHover.gif'});
 </script>
+    <div class="container">
+      <% flash.each do |key, value| %>
+          <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
 
+    </div>
 <%= yield %>
 
 

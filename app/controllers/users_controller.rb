@@ -47,7 +47,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         sign_in @user
-        flash[:success] = "Welcome to the Sample App!"
+        flash[:success] = "Welcome to WHAT'S THE BIG IDEA'!"
       #  redirect_to @user
         format.html { render  'users/home' }
 

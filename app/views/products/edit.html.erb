@@ -1,4 +1,4 @@
-<div id="edit_div" xmlns="http://www.w3.org/1999/html">
+<div id="edit_div">
   <% if !signed_in? %>
       <div id="edit_unsigned" >
         <%=  link_to "Register", signup_path , :style=>"color:blue"%> <br /> <br />
@@ -7,14 +7,12 @@
       </div>
   <% end %>
   <div class="field">
-
-
-    <input type="text" value= <%=@product.product_url%> , class="video_title"/>
+    <input type="text" value= <%=@product.product_url%> ,  class="video_title">
   </div>
   <% if signed_in? %>
       <p id="stats" >
 
-        View <%=@product.product_url %> <br /> <br />
+        View  <br /> <br />
         <%if @comment.count == 1 %>
             <%= @comment.count %> <a href="#comments">Comment </a> </br>
         <% else %>
@@ -57,11 +55,11 @@
 
           <div class="actions1">
             <a id="comments"></a>
-            <%= f.submit %>
+            <%= f.submit  "Update", class: "btn btn-large btn-primary"%>
           </div>
 
           <div id="questions_div">
-            <br /> <%=  link_to_add_fields "Add Question", f, :questions %> </br>
+            <br /> <%=  link_to_add_fields "Add Question", f, :questions %>
             <%= f.fields_for :questions do |builder| %>
 
                 <%= render "questions_fields", :f => builder %>
@@ -69,8 +67,7 @@
             <% end %>
           </div>
           <div id="comments_div">
-
-            </br> <%=  link_to_add_fields "Add Comment", f, :comments %> </br>
+            <%=  link_to_add_fields "Add Comment", f, :comments%>
             <%= f.fields_for :comments do |builder| %>
                 <div id="comments_column">
                   <%= render "comments_fields", :f => builder %>

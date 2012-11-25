@@ -48,7 +48,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @comment =  Comment.find(:all, :conditions => {:product_id =>@product.id})
     @question =  Question.find(:all, :conditions => {:product_id =>@product.id})
-    @answer = Answer.find(:all)
+    @answer =  Answer.find(:all, :conditions => {:question_id =>@product.id})
  end
 
   # POST /products

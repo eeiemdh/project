@@ -9,7 +9,9 @@
     </tr>
 
     <% @products.each do |product| %>
-
+         <% question_i =0 %>
+        <% answers_i =0 %>
+        <% comment_i=0 %>
         <tr>
           <td id="url" align="center" colspan="2"> <%= product.product_url %></td>
           <% @questions.each do |question| %>
@@ -17,7 +19,7 @@
                 <tr>
                   <td id="question"><%= "Question:" %> <%= question.content %></td>
                 </tr>
-
+                 <% question_i +=1 %>
 
                 <% @answers.each do |answer| %>
                     <% if answer.question_id == question.id %>
@@ -26,9 +28,12 @@
                             <%= answer.content %></td>
                         </tr>
 
+                       <%answers_i +=1 %>
 
                     <% end %>
+
                 <% end %>
+
             <% end %>
 
 
@@ -38,6 +43,7 @@
                 <tr>
                   <td id="comment"><%= "Comment:" %> <%= comment.content %></td>
                 </tr>
+                <%comment_i += 1%>
             <% end %>
         <% end %>
 
@@ -47,6 +53,11 @@
         <tr>
           <td class="user_table"> &nbsp</td>
         </tr>
+        <tr>
+          <td><%= question_i %>  questions</td>
+          <td><%= answers_i %> answers</td>
+          <td><%= comment_i %> comments</td>
+         </tr>
 
     <% end %>
 

@@ -11,6 +11,8 @@
  *= require_self
  *= require_tree .
  */
+
+
 html, body{height:100%;}
 body{
       height:100%;
@@ -42,7 +44,8 @@ textarea {
 label {
     color:#1C140D;
     font-weight:bold;
-    font-size:16px;
+    font-size:10px;
+    text-transform:uppercase;
 }
 .initial{
     margin-top: 3em;
@@ -72,25 +75,30 @@ label {
 }
 
 #questions_div{position:relative;
-              float: right;
+              float: left;
+              margin-left:1%;
               margin-bottom:5em;
-              margin-right:5em;
+              margin-right:1%;
               text-transform:uppercase;
               }
 #questions_div a {color:black;}
 #questions_div textarea{background-color:#BF9692;}
 
 #comments_div{ position:relative;
+               float:right;
+               margin-right:10%;
                margin-top:1em;
                margin-bottom:2em;
-               margin-left:5em;
                text-transform:uppercase;}
 #comments_div textarea {background-color:#BF9692;}
-#comments_div a { color:black;}
+#comments_div a { color:black;
+                 }
 
-
+.text_area_f{width:400px;
+             height:100px;}
 #edit_div{
-          margin-left:50px;
+          margin-left:10%;
+
          }
 #edit_unsigned{ font-size:1.25em;
     color:black;
@@ -110,7 +118,6 @@ label {
          text-align:center;
 }
 
-.quizfield{color:black;}
 
 
 .textfield { color:#B2B2AD;}
@@ -120,18 +127,20 @@ label {
               margin-right:30%;
               margin-bottom:10em;
 
-             /*margin-left:23.5%;
-              margin-top:5%;*/}
+
+             }
 
 
-.field  {margin-left:38%;
+.field  {margin-left:35%;
          margin-top:1em;
 
 }
 
-.video_title{ text-align:center;
+.video_title { text-align:center;
               font-size:1.25em;
               font-weight:bold;
+              text-transform:uppercase;
+              background-color:gray;
 }
 
 .field label {font-size:1em;
@@ -143,8 +152,8 @@ label {
 .field textfield{text-align:center;}
 
 .actions1{ margin-left:40%;
-         margin-top:15%;
-         font-size:1.5em;}
+          margin-top:15%;
+          font-size:1.5em;}
 
 
 #index_div{ position:relative;
@@ -154,7 +163,7 @@ label {
 }
 
 #index_div table tr td {text-transform:uppercase;
-                        color:#413D3D;
+                        color:black;
                         font-family:san-serif;
                         padding-top:2px;
                         padding-bottom:2px;
@@ -192,8 +201,8 @@ label {
     margin-left:2.5em;}
 
 /*css for video upload page */
-#new_image{margin-top:5em;
-    margin-left:12em;}
+#new_image{position:relative;
+           float:left;}
 /*-----------------show all user products---------------------------------------------*/
 #show_user_div1 {
     margin-left:30%;
@@ -218,9 +227,9 @@ label {
 .user_table{border:none;
     background-color:white;}
 /*-----------------Edit user profile--------------------------------------------*/
-#user_edit label { color:white;
-    text-transform:uppercase;
-    font-size:12px;
+#user_edit label { color:Black;
+                   text-transform:uppercase;
+                   font-size:12px;
 
 }
 #user_edit h1{ margin-left:12em;
@@ -229,28 +238,27 @@ label {
     font-size:14px;
 }
 #user_edit { margin-left:8em;}
-#shower { margin-left:20em;}
+#shower { margin-left:30em;}
 
 a:link{color:white;}
 
 a:hover{background-color:#26ADE4;}
 
-
+ #reg_position{ margin-left:20%;}
 /*-----------------New Session--------------------------------------------*/
+#session_login {margin-left:20%;}
 
-#session_new label { color:white;
-
+/*.button{ color:white;
     text-transform:uppercase;
     font-size:12px;
+}  */
 
-}
-.button{ color:white;
-    text-transform:uppercase;
-    font-size:12px;
-}
+.session_new { font-size:.9em;
+               color:gray;
+              }
 
-#session_new p {color:white;
-    margin-left:35%;}
+.new_path {color:white;
+                margin-left:0%;}
 
 #session_image{margin-left:25%;
     margin-top:5%;

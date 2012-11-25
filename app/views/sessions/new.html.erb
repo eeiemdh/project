@@ -1,23 +1,28 @@
 <% provide(:title, "Sign in") %>
 
 <div class="initial">
-  <div id="session_new">
-
+  <div id="session_login">
+    <div class="row">
+    <div class="span6 offset3">
     <%= form_for(:session, url: sessions_path) do |f| %>
 
-        <%= f.label :email, :style=>"margin-left:29.75%" %>
-        <%= f.text_field :email, :size=>32 %> <br />
+       <%= f.label :email%>
+        <%= f.text_field :email %>
 
-        <%= f.label :password,:style=>"margin-left:26.2%" %>
-        <%= f.password_field :password, :size=>33 %> <br /> <br />
+       <%= f.label :password%>
+       <%= f.password_field :password%>  <br />
 
-        <%= f.submit "Sign in", class: "button", :style=>"margin-left:40.5%" %>
+
+        <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
     <% end %>
 
-    <p>
-      New user? <%= link_to "Sign up now!", signup_path, :style=>"color:blue" %></p>
+    <p class="new_path">
+      New user? <%= link_to "Sign up now!", signup_path %>
+    </p>
+      </div>
+      </div>
   </div>
   <div id="session_image">
-    <%= image_tag "writing.jpg", :size=>"400x200" %>
+    <%= image_tag "writing.jpg", :size=>"400x200" , :style=>"margin-left:8%"%>
   </div>
   </div>

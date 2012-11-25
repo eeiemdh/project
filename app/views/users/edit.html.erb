@@ -8,21 +8,21 @@
     <%= form_for(@user) do |f| %>
         <%= render 'shared/error_messages',  object: f.object%>
 
-        <%= f.label :name, :style=>"margin-left:9em"%>
+        <%= f.label :name, :style=>"margin-left:19em"%>
         <%= f.text_field :FirstName,:size=>30 %><br/>
-        <%= f.label :LastName, :style=>"margin-left:6.25em"%>
+        <%= f.label :LastName, :style=>"margin-left:16.25em"%>
         <%= f.text_field :LastName %><br/>
-        <%= f.label :Email, :style=>"margin-left:8.7em" %>
+        <%= f.label :Email, :style=>"margin-left:18.7em" %>
         <%= f.text_field :email, :size=>30 %> <br/>
 
-        <%= f.label :password, :style=>"margin-left:5.75em" %>
+        <%= f.label :password, :style=>"margin-left:15.75em" %>
         <%= f.password_field :password,:size=>31 %> <br/>
 
-        <%= f.label :password_confirmation, "Confirm Password" %>
+        <%= f.label :password_confirmation, "Confirm Password" , :style=>"margin-left:10em"%>
         <%= f.password_field :password_confirmation, :size=>31 %> <br/>
           <br/>
         <%= f.submit "Save changes", class: "btn btn-large btn-primary",
-                     :style=>"margin-left:14em" %> <br/> <br/>
+                     :style=>"margin-left:24em" %> <br/> <br/>
       <div id="shower">
       <%= image_tag "shower.jpg" %>
       </div>
