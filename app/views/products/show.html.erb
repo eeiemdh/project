@@ -1,78 +1,89 @@
 <p id="notice"><%= notice %></p>
 <% answers_i =0 %>
-
-
- <table id="show_customer">
+<h1 id="Report_heading"> Survey Results</h2>
+ <div id="background_report">
+ <div class="row">
+ <div class="span3 offset3">
+   <br />
+   <br />
+   <br />
+   <br />
+ <table class="show_table1">
    <th>
      <tr>
-       <td>
-         Customer Name
+       <td class="summary" colspan="3" >
+         Customer Details
         </td>
-       <td>E-Mail</td>
-       <td>Product Title</td>
+
      </tr>
      </th>
 
    <tr>
+     <td> Customer Name</td>
      <td> <%=current_user.FirstName %>
-     <%= current_user.LastName %>  </td>
+   <%= current_user.LastName %>
+     </td>
+     </tr>
+   <tr>
+     <td> Email</td>
     <td> <%=  current_user.email %></td>
+    </tr>
+   <tr>
+     <td> Product Title</td>
      <td>  <%= @product.product_url %></td>
    </tr>
-
  </table>
-<table id="show_summary">
+
+<br />
+
+<table id="table_summary">
   <tr>
-    <td> Summary</td>
+    <td class="summary" colspan="3"> Summary</td>
   <tr>
-    <td>Number of Questions</td>
-    <td> Number of Answers</td>
-    <td> Number of Comments</td>
+    <td>Total Questions </td>
+    <td>Total Answers</td>
+    <td>Total Comments</td>
   </tr>
   <tr>
     <td> <%=  @questions.count %></td>
+    <% @questions.each do |question| %>
+        <% @answer.each do |answer| %>
+            <%  if answer.question_id == question.id %>
+                <% answers_i +=1 %>
+                <%end %>
+           <% end %>
+      <% end %>
     <td> <%=  answers_i%>
     <td> <%=  @comment.count %></td>
   </tr>
 </table>
+   <br />
 
 
 
 
+<table id="show_tableQA">
 
-
-<table id="show_questions">
-  <tr>
-    <td class="user_table"> &nbsp</td>
-  </tr>
-  <tr>
-    <td class="user_table"> &nbsp</td>
-  </tr>
   <tr>
     <td id="url" align="center" colspan="2"> Questions & Answers</td>
     <% @questions.each do |question| %>
       <tr>
-      <td > <%= "Question:" %> <%= question.content %></td>
+      <td> <%= "Question:" %> <%= question.content %></td>
        </tr>
 
 
   <% @answer.each do |answer| %>
       <tr>
         <%  if answer.question_id == question.id %>
-        <td> <%= "Answer:" %> <%= answer.content %></td>
+        <td id="answer_border"> <%= "Answer:" %> <%= answer.content %></td>
         </tr> <% answers_i +=1 %>
         <% end %>
       <% end %>
   <% end %>
 </table>
-<table id="show_comments">
-  <tr>
-    <td class="user_table"> &nbsp</td>
-  </tr>
-  <tr>
-    <td class="user_table"> &nbsp</td>
-  </tr>
-  <tr>
+<br />
+<table id="comments_table">
+<tr>
     <td id="url" align="center" colspan="2"> Comments</td>
   <% @comment.each do |comment| %>
       <tr>
@@ -91,7 +102,10 @@
 
 </p>
 
-<div id="show_links">
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<div>
+<%= link_to 'Back', edit_product_path(@product) %> |
+<%= link_to 'Home', products_path %>
+</div>
+</div>
+</div>
 </div>

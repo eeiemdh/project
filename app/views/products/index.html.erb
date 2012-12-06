@@ -1,7 +1,7 @@
 
 
  <div id="index_div">
-<table>
+<table class="table-condensed">
   <tr>
     <th colspan="2">Latest Videos</th>
     <th></th>
@@ -14,7 +14,7 @@
 <% @products.each do |product| %>
   <tr>
     <td ><%=product.product_url%></td>
-    <td id="viewVideo"><%= link_to 'View Video', edit_product_path(product) %></td>
+    <td id="viewVideo"><%= link_to 'View Video', edit_product_path(product), :class=>"btn btn-link" %></td>
 
 
   </tr>
@@ -24,7 +24,7 @@
       <td colspan="2">
         <% if(signed_in?) %>
             <div id="index_newProduct">
-              <%= link_to 'Upload Video', new_product_path %> <br/>
+              <%= link_to 'Video Upload', new_product_path, :class=>"btn btn-primary", :style=>"color:black" %> <br/>
             </div>
         <% end %>
       </td>

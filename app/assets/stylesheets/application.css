@@ -16,7 +16,7 @@
 html, body{height:100%;}
 body{
       height:100%;
-      width:100%;
+       width:100%;
     background-image:url('../images/background5.jpg');
   }
 
@@ -84,11 +84,11 @@ label {
 #questions_div a {color:black;}
 #questions_div textarea{background-color:#BF9692;}
 
-#comments_div{ position:relative;
+#comments_div{ /*position:relative;
                float:right;
                margin-right:10%;
                margin-top:1em;
-               margin-bottom:2em;
+               margin-bottom:2em;   */
                text-transform:uppercase;}
 #comments_div textarea {background-color:#BF9692;}
 #comments_div a { color:black;
@@ -105,18 +105,24 @@ label {
     text-transform:uppercase;
 }
 
+
+
 #stats { position:relative;
          float:left;
-         margin-left:5em;
+         margin-left:10em;
          margin-top:15%;
          font-size:1.25em;
-         color:white;
+         color:blue;
          height:8em;
          width:8em;
          border-radius:10px;
-    background-image:url('../images/stats.png');
          text-align:center;
+         text-decoration:underline;
 }
+
+#stats a {color:blue;
+
+          }
 
 
 
@@ -125,22 +131,27 @@ label {
 #video_place{ position:relative;
               float:right;
               margin-right:30%;
+              margin-left:10%;
+
               margin-bottom:10em;
 
 
              }
 
 
-.field  {margin-left:35%;
-         margin-top:1em;
+.field  {margin-left:-8%;
 
+        }
+.report_field{
+    margin-left:-9%;
 }
-
 .video_title { text-align:center;
               font-size:1.25em;
               font-weight:bold;
               text-transform:uppercase;
               background-color:whitesmoke;
+              font-family:comic sans MS, ROMAN;
+              color:darkmagenta;
 }
 
 .field label {font-size:1em;
@@ -163,12 +174,12 @@ label {
 }
 
 #index_div table tr td {text-transform:uppercase;
-                        color:black;
-                        font-family:san-serif;
+                        color:darkmagenta;
+                        font-family:comic sans MS, ROMAN;
                         padding-top:2px;
                         padding-bottom:2px;
                         background-color:white;
-                        border-color:black;
+                        border-color:gray;
                        }
 
 #index_div table th { text-transform:uppercase;
@@ -192,7 +203,9 @@ label {
     }
 
 #index_newProduct{ float:right;
-    margin-right:3em;
+                   margin-right:3em;
+
+
 
 }
 #index_text p { font-size:1.1em;}
@@ -217,21 +230,32 @@ label {
     border:none;
 
 }
-#url {color:#6B0103;
+#url {color:#8a2be2;
     text-align:center;
     text-transform:uppercase;
-    border:none;
-    text-decoration:underline;
+    border-color:gray;
+    background-color:#E8F3F8;
+
 
 }
+
+
+#background_report{  background-image:url('../images/parchment.jpg');
+                     background-size: 100% auto;
+                      background-repeat:no-repeat;
+                      margin-left:5em;
+                      margin-right:5em;
+
+}
+
+
 .user_table{border:none;
     background-color:white;
 }
 
- #summary{text-transform:uppercase;
-           color:#8a2be2;
-  }
 
+
+}
 #li_product {text-transform:uppercase;
              list-style:none;
              text-decoration:underline;
@@ -297,24 +321,74 @@ a:hover{background-color:#26ADE4;}
                 float:left;
                 margin-top:1em;
                 margin-left:43%;
+                color:#484BA1;
                 }
 
 #show_comments { float:left;
                 margin-left:30%;
-                margin-right:10%;}
+                margin-right:10%;
+                color:#484BA1;}
 
 #show_summary{ float:left;
                margin-left:30%;
                margin-right:15%;
                margin-top:2%;
+               color:#484BA1;}
+
+
+ #table_summary tr td{ font-family:comic sans MS, ROMAN;
+                           border-color:gray;
+                           min-width:150px;}
+
+.summary{text-transform:uppercase;
+    color:#8a2be2;
+    background-color:#E8F3F8;
+    text-align:center;
+    font-family:comic sans MS, ROMAN;
 
 }
-#show_customer{
+
+#Report_heading{ font-family:comic sans MS, ROMAN;
+                  color:#8a2be2;
+                  text-align:left;
+                  margin-left:35%;
+                  border-bottom:10em;}
+#show_tableQA tr td
+{
+    font-family:comic sans MS, ROMAN;
+    border-color:gray;
+    min-width:458px;
+
+}
+#comments_table tr td{
+                     font-family:comic sans MS, ROMAN;
+                      border-color:gray;
+                      min-width:458px;
+}
+.show_table1 {}
+
+.show_table1 tr td{ font-family:comic sans MS, ROMAN;
+                    border-color:gray;
+                    min-width:150px;
+
+}
+#show_customer{ color:#484BA1;
                float:left;
                margin-left:30%;
 }
+#show_customer, table, tr, td {border-color:black;}
+#show_questions, table, tr, td {border-color:black;}
 
 #show_links{ float:left;
              margin-left:5%;
              margin-bottom:5%;
              margin-right:60%;}
+
+.show_row1 {color:black;}
+
+
+#answer_border{ border-top:none;
+
+}
+
+#show_summary tr td {text-align:center;}
