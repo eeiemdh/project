@@ -86,13 +86,20 @@
    <div class="row">
      <div class="span4 offset6">
             <a id="comments"></a>
-            <%= f.submit  "Update", :class=> "btn btn-large btn-block btn-primary", :style=>"margin-left:5%"%>
+            <%= f.submit  "Post", :class=> "btn btn-large btn-block btn-primary", :style=>"margin-left:5%"%>
           </div>
      </div>
      <div class="row">
         <div class="span2 offset1">
           <div id="questions_div">
-            <br /> <%=  link_to_add_fields "Add Question", f, :questions %>
+            <table id="add_question">
+              <tr>
+                <td class="btn btn-link ">
+
+             <%=  link_to_add_fields "Add Question", f, :questions %>
+               </td>
+                </tr>
+              </table>
             <%= f.fields_for :questions do |builder| %>
 
                 <%= render "questions_fields", :f => builder %>
@@ -102,8 +109,15 @@
           </div>
          <div class="span6 offset4">
           <div id="comments_div">
+            <table id="add_comments">
+              <tr>
+                <td class="btn">
+
 
             <%=  link_to_add_fields "Add Comment", f, :comments%>
+              </td>
+            </tr>
+            </table>
             <%= f.fields_for :comments do |builder| %>
                 <div id="comments_column">
                   <%= render "comments_fields", :f => builder %>

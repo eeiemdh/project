@@ -81,15 +81,15 @@ label {
               margin-right:1%;
               text-transform:uppercase;
               }
-#questions_div a {color:black;}
+#questions_div a {color:black;
+                  vertical-align:top;}
 #questions_div textarea{background-color:#BF9692;}
 
-#comments_div{ /*position:relative;
-               float:right;
-               margin-right:10%;
-               margin-top:1em;
-               margin-bottom:2em;   */
-               text-transform:uppercase;}
+
+ #comments_table{}
+ #comments_div table tr > td {text-transform:uppercase;
+                              }
+
 #comments_div textarea {background-color:#BF9692;}
 #comments_div a { color:black;
                  }
@@ -360,6 +360,8 @@ a:hover{background-color:#26ADE4;}
     min-width:458px;
 
 }
+ #add_question{min-width:410px;}
+#add_comments{min-width:410px;}
 #comments_table tr td{
                      font-family:comic sans MS, ROMAN;
                       border-color:gray;
