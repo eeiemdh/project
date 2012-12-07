@@ -52,9 +52,21 @@
     Please view the videos by clicking the link in the "Latest Videos" table adjacent.
    </p>
 
+    <br />
+  <br />
+  <p id="most_voted"> View this weeks top invention</p>
+  <br />
+  <% @products.each do |product| %>
+   <%  if product.id == 6    %>
+          <div class="field">
+            <input type="text" value= <%=product.product_url%> ,  class="top_titles">
+          </div>
+  <%= video_player({:file=>product.video.url.to_s}, width:300, height:200)%>
+      <% end  %>
 
-
+  <% end %>
 </div>
+ </div>
 
 
 
