@@ -9,6 +9,8 @@ class Product < ActiveRecord::Base
 
   accepts_nested_attributes_for :questions, :reject_if => lambda { |a| a[:content].blank? }, :allow_destroy => true
   mount_uploader :video, VideoUploader
+
+  has_reputation :votes, source: :user, aggregated_by: :sum
 end
 
 

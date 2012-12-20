@@ -109,12 +109,12 @@ label {
 
 #stats { position:relative;
          float:left;
-         margin-left:10em;
+         margin-left:8em;
          margin-top:15%;
          font-size:1.25em;
          color:blue;
          height:8em;
-         width:8em;
+           width:8em;
          border-radius:10px;
          text-align:center;
          text-decoration:underline;
@@ -138,8 +138,8 @@ label {
 
              }
 
-
-.field  {margin-left:-8%;
+.field2 {margin-left:-20%;}
+.field  {margin-left:-10%;
 
         }
 .report_field{

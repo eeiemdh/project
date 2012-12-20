@@ -12,8 +12,10 @@
    </div>
   <div class="row" >
     <div class="span 4 offset6">
-      <div class="field">
+      <div class="field2">
+
     <input type="text" value= <%=@product.product_url%> ,  class="video_title">
+
         </div>
     </div>
     </div>
@@ -22,14 +24,21 @@
   <% if signed_in? %>
 
 
-
   </br>
 
       <p id="stats" >
+        <% if (!@product.has_evaluation?(:votes, current_user))%>
+               Do you like this idea? <br />
 
-         <br /> <br />
+        <%= link_to image_tag("./thumbsUp.png", :width=>50, :height=>50), vote_product_path(@product, type: "up"), method: "post", :style=>"text-decoration:none" %>
+        <%= link_to image_tag("./thumbsDown.jpg", :width=>50, :height=>50), vote_product_path(@product, type: "down"), method: "post", :style=>"text-decoration:none" %> <br />
+        <% end %>
 
-        <%if @comment.count == 1 %>
+        <br /> <br />
+
+        <%=  pluralize(@product.reputation_for(:votes).to_i, "vote") %>  <br />
+
+           <%if @comment.count == 1 %>
             <%= @comment.count %> <a href="#comments">Comment </a> </br>
         <% else %>
             <%= @comment.count %> <a href="#comments">Comments </a> </br>
@@ -60,7 +69,8 @@
      <% end %>
      <%= video_player({:file=>@product.video.url.to_s}, width:500, height:400) %>
        <% if signed_in? %>
-     <%= link_to "Product Report", display_path(:id=>@product.id) %>
+     <%= link_to "Product Report", display_path(:id=>@product.id), :style=>"text-transform:uppercase; color:blue" %>  <br />
+
         <%end%>
   </div>
   </div>

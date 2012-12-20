@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 <% answers_i =0 %>
-<h1 id="Report_heading"> Survey Results</h2>
+<h1 id="Report_heading"> Survey Results</h1>
  <div id="background_report">
  <div class="row">
  <div class="span3 offset3">
@@ -38,11 +38,12 @@
 
 <table id="table_summary">
   <tr>
-    <td class="summary" colspan="3"> Summary</td>
+    <td class="summary" colspan="4"> Summary</td>
   <tr>
     <td>Total Questions </td>
     <td>Total Answers</td>
     <td>Total Comments</td>
+    <td> Total Votes</td>
   </tr>
   <tr>
     <td> <%=  @questions.count %></td>
@@ -55,6 +56,7 @@
       <% end %>
     <td> <%=  answers_i%>
     <td> <%=  @comment.count %></td>
+    <td> <%=  @product.reputation_for(:votes).to_i %></td>
   </tr>
 </table>
    <br />

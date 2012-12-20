@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
 
 
   def index
-    @products = Product.all
+    @products = Product.find_with_reputation(:votes, :all, order: "votes desc")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -88,6 +88,24 @@ class ProductsController < ApplicationController
       end
     end
   end
+
+  def vote
+   #value = params[:type] == "up" ? 1 : -1
+    case params[:type]
+      when "up"
+        value=1
+      when"down"
+        value=-1
+
+    end   # end case
+
+
+   @product = Product.find(params[:id])
+   @product.add_evaluation(:votes, value, current_user)
+    redirect_to :back, notice: "Thank you for voting"
+  end
+
+
 
   # DELETE /products/1
   # DELETE /products/1.json

@@ -24,6 +24,10 @@ Project::Application.routes.draw do
   match '/patent', to: 'statics#patent'
   match '/trade', to: 'statics#trade'
 
+  resources :products do
+    member {post :vote}
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
