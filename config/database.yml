@@ -6,7 +6,7 @@
 development:
   adapter: postgresql
   encoding: utf8
-  database: db/any
+  database: db/final
   host: localhost
   pool: 5
   username: postgres

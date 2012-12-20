@@ -56,16 +56,16 @@
   <br />
   <p id="most_voted"> View this weeks top invention</p>
   <br />
-
-
-          <div class="field">
-            <input type="text" value= <%=@products[0].product_url%> ,  class="top_titles">
-          </div>
+  <div class="field">
+    <input type="text" value= <%=@products[0].product_url%> ,  class="top_titles">
+  </div>
   <%= video_player({:file=>@products[0].video.url.to_s}, width:300, height:200)%>
 
 
 
 </div>
+
+
  </div>
 
 
