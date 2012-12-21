@@ -11,6 +11,8 @@ class Product < ActiveRecord::Base
   mount_uploader :video, VideoUploader
 
   has_reputation :votes, source: :user, aggregated_by: :sum
+
+
 end
 
 
