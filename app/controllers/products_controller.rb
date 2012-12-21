@@ -3,8 +3,8 @@ class ProductsController < ApplicationController
 
 
   def index
-    @products = Product.find_with_reputation(:votes, :all, order: "votes desc")
-
+ #   @products = Product.find_with_reputation(:votes, :all, order: "votes desc")
+      @products = Product.find(:all)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @products }
